@@ -1,0 +1,417 @@
+{
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "copyFormatting": "none",
+    "copyOnSelect": false,
+    "defaultProfile": "{}", // Select default profile by guid
+    // Add custom keybindings to this array.
+    // To unbind a key combination from your defaults.json, set the command to "unbound".
+    // To learn more about keybindings, visit https://aka.ms/terminal-keybindings
+    "keybindings": [
+        // Copy and paste are bound to Ctrl+Shift+C and Ctrl+Shift+V in your defaults.json.
+        // These two lines additionally bind them to Ctrl+C and Ctrl+V.
+        // To learn more about selection, visit https://aka.ms/terminal-selection
+        {
+            "command": {
+                "action": "copy",
+                "singleLine": false
+            },
+            "keys": "ctrl+c"
+        },
+        {
+            "command": "paste",
+            "keys": "ctrl+v"
+        },
+        // Press Ctrl+Shift+F to open the search box
+        {
+            "command": "find",
+            "keys": "ctrl+shift+f"
+        },
+        // Press Alt+Shift+D to open a new pane.
+        // - "split": "auto" makes this pane open in the direction that provides the most surface area.
+        // - "splitMode": "duplicate" makes the new pane use the focused pane's profile.
+        // To learn more about panes, visit https://aka.ms/terminal-panes
+        {
+            "command": {
+                "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
+            },
+            "keys": "alt+shift+d"
+        }
+    ],
+    "profiles": {
+        "defaults": {
+            "acrylicOpacity": 0.7,
+            "antialiasingMode": "cleartype",
+            "bellStyle": "visual",
+            "colorScheme": "One Half Dark",
+            "cursorShape": "vintage",
+            "experimental.retroTerminalEffect": false,
+            "fontFace": "Cascadia Code PL",
+            "useAcrylic": true
+        },
+        "list": [
+            {
+                // Starts new Windows Terminal window in elevated mode
+                "commandline": "pwsh.exe -command Start-Process -Verb RunAs \"shell:appsFolder\\Microsoft.WindowsTerminal_8wekyb3d8bbwe!App\"",
+                "icon": "ms-appx:///Images/Square44x44Logo.targetsize-32.png",
+                "name": "Windows Terminal (\u26a1)"
+            },
+            /* {
+                // Windows PowerShell (added by default)
+                "commandline": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                "guid": "{}", // Use New-Guid cmdlet to generate
+                "name": "Windows PowerShell",
+                "suppressApplicationTitle": true,
+                "tabTitle": "Windows PowerShell"
+            }, */
+            {
+                "commandline": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -NoExit -Command \"Write-Output \"Pre-update:\"; Get-InstalledModule | ft -Autosize;$modules = Get-InstalledModule | select Name;$modules | foreach {Update-Module $_.Name};Write-Output \"Post-update:\";Get-InstalledModule | ft -Autosize;\"",
+                "guid": "{}", // Use New-Guid cmdlet to generate
+                "icon": "", // Path to icon file
+                "name": "Update Modules",
+                "startingDirectory": "%USERPROFILE%",
+                "suppressApplicationTitle": true,
+                "tabTitle": "Update Modules"
+            },
+            // 
+            /* {
+                // PowerShell 7/ PowerShell Core (added by default if installed)
+                "guid": "{}", // Use New-Guid cmdlet to generate
+                "name": "PowerShell",
+                "source": "Windows.Terminal.PowershellCore",
+                "suppressApplicationTitle": true,
+                "tabTitle": "PowerShell"
+            }, */
+            {
+                "commandline": "cmd.exe",
+                "experimental.retroTerminalEffect": true,
+                "guid": "{}", // Use New-Guid cmdlet to generate
+                "name": "Eingabeaufforderung",
+                "suppressApplicationTitle": true,
+                "tabTitle": "Eingabeaufforderung"
+            },
+            /* {
+                // Ubuntu WSL (added by default if installed)
+                "guid": "{}", // Use New-Guid cmdlet to generate
+                "name": "Ubuntu",
+                "source": "Windows.Terminal.Wsl",
+                "suppressApplicationTitle": true,
+                "tabTitle": "Ubuntu"
+            }, */
+            /* {
+                // Azure Cloud Shell (added by default)
+                "guid": "{}", // Use New-Guid cmdlet to generate
+                "name": "Azure Cloud Shell",
+                "source": "Windows.Terminal.Azure"
+            }, */
+            {
+                "commandline": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -NoExit -Command \"Import-Module MSOnline -DisableNameChecking; Connect-MsolService;\"",
+                "guid": "{}", // Use New-Guid cmdlet to generate
+                "icon": "", // Path to icon file
+                "name": "MSOL Management Shell",
+                "startingDirectory": "%USERPROFILE%",
+                "suppressApplicationTitle": true,
+                "tabTitle": "MSOL Management Shell"
+            },
+            {
+                "commandline": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -NoExit -Command \"Import-Module AzureADPreview -DisableNameChecking; Connect-AzureAD;\"",
+                "guid": "{}", // Use New-Guid cmdlet to generate
+                "icon": "", // Path to icon file
+                "name": "Azure AD Management Shell (Preview)",
+                "startingDirectory": "%USERPROFILE%",
+                "suppressApplicationTitle": true,
+                "tabTitle": "Azure AD Management Shell (Preview)"
+            },
+            {
+                "commandline": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -NoExit -Command \"Import-Module ExchangePowerShell -DisableNameChecking;\"",
+                "guid": "{}", // Use New-Guid cmdlet to generate
+                "icon": "", // Path to icon file
+                "name": "Exchange 2016 Management Shell",
+                "startingDirectory": "%USERPROFILE%",
+                "suppressApplicationTitle": true,
+                "tabTitle": "Exchange 2016 Management Shell"
+            },
+            {
+                "commandline": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -NoExit -Command \"Import-Module ExchangeOnlineManagement -DisableNameChecking; Connect-ExchangeOnline;\"",
+                "guid": "{}", // Use New-Guid cmdlet to generate
+                "icon": "", // Path to icon file
+                "name": "Exchange Online Management Shell",
+                "startingDirectory": "%USERPROFILE%",
+                "suppressApplicationTitle": true,
+                "tabTitle": "Exchange Online Management Shell"
+            },
+            {
+                "commandline": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -NoExit -Command \"Import-Module MicrosoftTeams -DisableNameChecking; Connect-MicrosoftTeams;\"",
+                "guid": "{}", // Use New-Guid cmdlet to generate
+                "icon": "", // Path to icon file
+                "name": "Microsoft Teams Management Shell",
+                "startingDirectory": "%USERPROFILE%",
+                "suppressApplicationTitle": true,
+                "tabTitle": "Microsoft Teams Management Shell"
+            },
+            /* {
+                // Remote PowerShell session to SfB Management Shell
+                "commandline": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -NoExit -Command \"Enter-PSSession -ConnectionUri https://ConnectionUri -Credential domain\sam\"",
+                "guid": "{}", // Use New-Guid cmdlet to generate
+                "icon": "", // Path to icon file
+                "name": "Skype for Business Management Shell",
+                "startingDirectory": "%USERPROFILE%",
+                "suppressApplicationTitle": true,
+                "tabTitle": "Skype for Business Management Shell"
+            }, */
+            {
+                "commandline": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -NoExit -Command \"Import-Module Microsoft.Online.SharePoint.PowerShell -DisableNameChecking; Connect-SPOService;\"",
+                "guid": "{}", // Use New-Guid cmdlet to generate
+                "icon": "", // Path to icon file
+                "name": "SharePoint Online Management Shell",
+                "startingDirectory": "%USERPROFILE%",
+                "suppressApplicationTitle": true,
+                "tabTitle": "SharePoint Online Management Shell"
+            }/* ,
+            {
+                // ShareGate Desktop Shell profile
+                "commandline": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -NoExit -Command \"Import-Module Sharegate -DisableNameChecking;\"",
+                "guid": "{}", // Use New-Guid cmdlet to generate
+                "icon": "", // Path to icon file
+                "name": "ShareGate Desktop Shell",
+                "startingDirectory": "%USERPROFILE%",
+                "suppressApplicationTitle": true,
+                "tabTitle": "ShareGate Shell"
+            } */
+        ]
+    },
+    "schemes": [
+        {
+            "background": "#0C0C0C",
+            "black": "#0C0C0C",
+            "blue": "#0037DA",
+            "brightBlack": "#767676",
+            "brightBlue": "#3B78FF",
+            "brightCyan": "#61D6D6",
+            "brightGreen": "#16C60C",
+            "brightPurple": "#B4009E",
+            "brightRed": "#E74856",
+            "brightWhite": "#F2F2F2",
+            "brightYellow": "#F9F1A5",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#3A96DD",
+            "foreground": "#CCCCCC",
+            "green": "#13A10E",
+            "name": "Campbell",
+            "purple": "#881798",
+            "red": "#C50F1F",
+            "selectionBackground": "#FFFFFF",
+            "white": "#CCCCCC",
+            "yellow": "#C19C00"
+        },
+        {
+            "background": "#012456",
+            "black": "#0C0C0C",
+            "blue": "#0037DA",
+            "brightBlack": "#767676",
+            "brightBlue": "#3B78FF",
+            "brightCyan": "#61D6D6",
+            "brightGreen": "#16C60C",
+            "brightPurple": "#B4009E",
+            "brightRed": "#E74856",
+            "brightWhite": "#F2F2F2",
+            "brightYellow": "#F9F1A5",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#3A96DD",
+            "foreground": "#CCCCCC",
+            "green": "#13A10E",
+            "name": "Campbell Powershell",
+            "purple": "#881798",
+            "red": "#C50F1F",
+            "selectionBackground": "#FFFFFF",
+            "white": "#CCCCCC",
+            "yellow": "#C19C00"
+        },
+        {
+            "background": "#282C34",
+            "black": "#282C34",
+            "blue": "#61AFEF",
+            "brightBlack": "#5A6374",
+            "brightBlue": "#61AFEF",
+            "brightCyan": "#56B6C2",
+            "brightGreen": "#98C379",
+            "brightPurple": "#C678DD",
+            "brightRed": "#E06C75",
+            "brightWhite": "#DCDFE4",
+            "brightYellow": "#E5C07B",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#56B6C2",
+            "foreground": "#DCDFE4",
+            "green": "#98C379",
+            "name": "One Half Dark",
+            "purple": "#C678DD",
+            "red": "#E06C75",
+            "selectionBackground": "#FFFFFF",
+            "white": "#DCDFE4",
+            "yellow": "#E5C07B"
+        },
+        {
+            "background": "#FAFAFA",
+            "black": "#383A42",
+            "blue": "#0184BC",
+            "brightBlack": "#4F525D",
+            "brightBlue": "#61AFEF",
+            "brightCyan": "#56B5C1",
+            "brightGreen": "#98C379",
+            "brightPurple": "#C577DD",
+            "brightRed": "#DF6C75",
+            "brightWhite": "#4F525D",
+            "brightYellow": "#E4C07A",
+            "cursorColor": "#4F525D",
+            "cyan": "#0997B3",
+            "foreground": "#383A42",
+            "green": "#50A14F",
+            "name": "One Half Light",
+            "purple": "#A626A4",
+            "red": "#E45649",
+            "selectionBackground": "#FFFFFF",
+            "white": "#383A42",
+            "yellow": "#C18301"
+        },
+        {
+            "background": "#002B36",
+            "black": "#002B36",
+            "blue": "#268BD2",
+            "brightBlack": "#073642",
+            "brightBlue": "#839496",
+            "brightCyan": "#93A1A1",
+            "brightGreen": "#586E75",
+            "brightPurple": "#6C71C4",
+            "brightRed": "#CB4B16",
+            "brightWhite": "#FDF6E3",
+            "brightYellow": "#657B83",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#2AA198",
+            "foreground": "#839496",
+            "green": "#859900",
+            "name": "Solarized Dark",
+            "purple": "#D33682",
+            "red": "#DC322F",
+            "selectionBackground": "#FFFFFF",
+            "white": "#EEE8D5",
+            "yellow": "#B58900"
+        },
+        {
+            "background": "#FDF6E3",
+            "black": "#002B36",
+            "blue": "#268BD2",
+            "brightBlack": "#073642",
+            "brightBlue": "#839496",
+            "brightCyan": "#93A1A1",
+            "brightGreen": "#586E75",
+            "brightPurple": "#6C71C4",
+            "brightRed": "#CB4B16",
+            "brightWhite": "#FDF6E3",
+            "brightYellow": "#657B83",
+            "cursorColor": "#002B36",
+            "cyan": "#2AA198",
+            "foreground": "#657B83",
+            "green": "#859900",
+            "name": "Solarized Light",
+            "purple": "#D33682",
+            "red": "#DC322F",
+            "selectionBackground": "#FFFFFF",
+            "white": "#EEE8D5",
+            "yellow": "#B58900"
+        },
+        {
+            "background": "#000000",
+            "black": "#000000",
+            "blue": "#3465A4",
+            "brightBlack": "#555753",
+            "brightBlue": "#729FCF",
+            "brightCyan": "#34E2E2",
+            "brightGreen": "#8AE234",
+            "brightPurple": "#AD7FA8",
+            "brightRed": "#EF2929",
+            "brightWhite": "#EEEEEC",
+            "brightYellow": "#FCE94F",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#06989A",
+            "foreground": "#D3D7CF",
+            "green": "#4E9A06",
+            "name": "Tango Dark",
+            "purple": "#75507B",
+            "red": "#CC0000",
+            "selectionBackground": "#FFFFFF",
+            "white": "#D3D7CF",
+            "yellow": "#C4A000"
+        },
+        {
+            "background": "#FFFFFF",
+            "black": "#000000",
+            "blue": "#3465A4",
+            "brightBlack": "#555753",
+            "brightBlue": "#729FCF",
+            "brightCyan": "#34E2E2",
+            "brightGreen": "#8AE234",
+            "brightPurple": "#AD7FA8",
+            "brightRed": "#EF2929",
+            "brightWhite": "#EEEEEC",
+            "brightYellow": "#FCE94F",
+            "cursorColor": "#000000",
+            "cyan": "#06989A",
+            "foreground": "#555753",
+            "green": "#4E9A06",
+            "name": "Tango Light",
+            "purple": "#75507B",
+            "red": "#CC0000",
+            "selectionBackground": "#FFFFFF",
+            "white": "#D3D7CF",
+            "yellow": "#C4A000"
+        },
+        {
+            "background": "#300A24",
+            "black": "#2E3436",
+            "blue": "#3465A4",
+            "brightBlack": "#555753",
+            "brightBlue": "#729FCF",
+            "brightCyan": "#34E2E2",
+            "brightGreen": "#8AE234",
+            "brightPurple": "#AD7FA8",
+            "brightRed": "#EF2929",
+            "brightWhite": "#EEEEEC",
+            "brightYellow": "#FCE94F",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#06989A",
+            "foreground": "#EEEEEC",
+            "green": "#4E9A06",
+            "name": "Ubuntu",
+            "purple": "#75507B",
+            "red": "#CC0000",
+            "selectionBackground": "#FFFFFF",
+            "white": "#D3D7CF",
+            "yellow": "#C4A000"
+        },
+        {
+            "background": "#000000",
+            "black": "#000000",
+            "blue": "#000080",
+            "brightBlack": "#808080",
+            "brightBlue": "#0000FF",
+            "brightCyan": "#00FFFF",
+            "brightGreen": "#00FF00",
+            "brightPurple": "#FF00FF",
+            "brightRed": "#FF0000",
+            "brightWhite": "#FFFFFF",
+            "brightYellow": "#FFFF00",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#008080",
+            "foreground": "#C0C0C0",
+            "green": "#008000",
+            "name": "Vintage",
+            "purple": "#800080",
+            "red": "#800000",
+            "selectionBackground": "#FFFFFF",
+            "white": "#C0C0C0",
+            "yellow": "#808000"
+        }
+    ],
+    "theme": "dark"
+}
