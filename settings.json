@@ -108,7 +108,7 @@
             {
                 "commandline": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -NoExit -Command \"Import-Module MSOnline -DisableNameChecking; Connect-MsolService;\"",
                 "guid": "{}", // Use New-Guid cmdlet to generate
-                "icon": "", // Path to icon file
+                "icon": "images\\Office.ico", // Path to icon file
                 "name": "MSOL Management Shell",
                 "startingDirectory": "%USERPROFILE%",
                 "suppressApplicationTitle": true,
@@ -117,7 +117,7 @@
             {
                 "commandline": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -NoExit -Command \"Import-Module AzureADPreview -DisableNameChecking; Connect-AzureAD;\"",
                 "guid": "{}", // Use New-Guid cmdlet to generate
-                "icon": "", // Path to icon file
+                "icon": "images\\AAD.ico", // Path to icon file
                 "name": "Azure AD Management Shell (Preview)",
                 "startingDirectory": "%USERPROFILE%",
                 "suppressApplicationTitle": true,
@@ -126,7 +126,7 @@
             {
                 "commandline": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -NoExit -Command \"Import-Module ExchangePowerShell -DisableNameChecking;\"",
                 "guid": "{}", // Use New-Guid cmdlet to generate
-                "icon": "", // Path to icon file
+                "icon": "images\\Exchange.ico", // Path to icon file
                 "name": "Exchange 2016 Management Shell",
                 "startingDirectory": "%USERPROFILE%",
                 "suppressApplicationTitle": true,
@@ -135,7 +135,7 @@
             {
                 "commandline": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -NoExit -Command \"Import-Module ExchangeOnlineManagement -DisableNameChecking; Connect-ExchangeOnline;\"",
                 "guid": "{}", // Use New-Guid cmdlet to generate
-                "icon": "", // Path to icon file
+                "icon": "images\\Exchange.ico", // Path to icon file
                 "name": "Exchange Online Management Shell",
                 "startingDirectory": "%USERPROFILE%",
                 "suppressApplicationTitle": true,
@@ -144,7 +144,7 @@
             {
                 "commandline": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -NoExit -Command \"Import-Module MicrosoftTeams -DisableNameChecking; Connect-MicrosoftTeams;\"",
                 "guid": "{}", // Use New-Guid cmdlet to generate
-                "icon": "", // Path to icon file
+                "icon": "images\\Teams.ico", // Path to icon file
                 "name": "Microsoft Teams Management Shell",
                 "startingDirectory": "%USERPROFILE%",
                 "suppressApplicationTitle": true,
@@ -154,7 +154,7 @@
                 // Remote PowerShell session to SfB Management Shell
                 "commandline": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -NoExit -Command \"Enter-PSSession -ConnectionUri https://ConnectionUri -Credential domain\sam\"",
                 "guid": "{}", // Use New-Guid cmdlet to generate
-                "icon": "", // Path to icon file
+                "icon": "images\\Skype.ico", // Path to icon file
                 "name": "Skype for Business Management Shell",
                 "startingDirectory": "%USERPROFILE%",
                 "suppressApplicationTitle": true,
@@ -163,7 +163,7 @@
             {
                 "commandline": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -NoExit -Command \"Import-Module Microsoft.Online.SharePoint.PowerShell -DisableNameChecking; Connect-SPOService;\"",
                 "guid": "{}", // Use New-Guid cmdlet to generate
-                "icon": "", // Path to icon file
+                "icon": "images\\SPO.ico", // Path to icon file
                 "name": "SharePoint Online Management Shell",
                 "startingDirectory": "%USERPROFILE%",
                 "suppressApplicationTitle": true,
@@ -173,7 +173,7 @@
                 // ShareGate Desktop Shell profile
                 "commandline": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -NoExit -Command \"Import-Module Sharegate -DisableNameChecking;\"",
                 "guid": "{}", // Use New-Guid cmdlet to generate
-                "icon": "", // Path to icon file
+                "icon": "images\\Sharegate.Shell.ico", // Path to icon file
                 "name": "ShareGate Desktop Shell",
                 "startingDirectory": "%USERPROFILE%",
                 "suppressApplicationTitle": true,
